@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <br />
+    <div class="text-center">
+      <h1>ระบบร้านอาหารตามสั่ง</h1>
+    </div>
+    <br />
+    <div class="card text-center mx-auto" style="width: 40rem;">
+
+        <div class="card-body" >
+          <h5 class="card-title text-center">Login</h5>
+          <br />
+          <div class="input-group flex-nowrap">
+    
+            <div class="col-md-6 mb-4">
+            </div>
+              <div class="col-md-3 mb-3">
+              </div>
+            </div>
+            <div class="form-row">
+                <div class="input-group input-group-lg col-md-5 mx-auto">
+    
+                <input type="text" class="form-control mb-2" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" #admin>
+    
+                </div>
+            </div>
+    
+            <div class="form-row">
+    
+                <div class="input-group input-group-lg col-md-5 mx-auto">
+            <input  type="password" class="form-control center"  name="password" placeholder="Password" #admin>
+          </div>
+        </div>
+        <br />
+            <div class="form-row">
+        <a class="btn btn-success mx-auto" (click)="click(admin.value,admin.value)" >OK</a>
+      </div>
+      </div>
+    </div>
+</ion-content>
