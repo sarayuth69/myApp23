@@ -9,6 +9,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 })
 export class HomePage {
   foods;
+  names
   table = [
     {name: 'TABLE_1'},
     {name: 'TABLE_2'},
@@ -30,6 +31,12 @@ export class HomePage {
     this.database.list('/tablemenu/'),  ref => ref.orderByChild('').limitToLast(3).valueChanges().subscribe( data => {
       this.foods = data.reverse();
   });
+  this.route.params.subscribe(
+    (param: any) => {
+      this.names = param;
+      console.log(this.names);
+    }
+  );
 }
 
   onclick(table) {

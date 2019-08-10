@@ -42,14 +42,21 @@ export class CutomermenuPage implements OnInit {
   async onClick(item) {
     firebase.database().ref('cart/' + this.table.name + '/' + item.foodID).once('value').then(data => {
       const list = data.val();
-      
+      let d = new Date();
+      let curr_date = d.getDate();
+      let curr_month = d.getMonth() + 1; //Months are zero based
+      let curr_year = d.getFullYear();
+      let curr_hourse = d.getHours();
+      let curr_minutes = d.getMinutes();
+      let curr_secounds = d.getSeconds();
+      if (list == null) {
         const cart = {
           foodID: item.foodID,
           foodname: item.foodname,
           foodprice: item.foodprice,
           foodtype: item.foodtype,
           amount: 1,
-          day: new Date(),
+          day: curr_date + "-" + curr_month + "-" +  curr_year + ", " + curr_hourse + ":" + curr_minutes + ":" + curr_secounds,
           status: 1,
           sum: item.foodprice,
           placeID: 1
@@ -58,8 +65,44 @@ export class CutomermenuPage implements OnInit {
         update['cart/' + this.table.name + '/' + item.foodID] = cart;
         firebase.database().ref().update(update);
         Swal.fire('สั่งอาหารสำเร็จแล้ว', 'กรุณาเช็ครายการของคุณ', 'success');
-      
+      } else {
+        if (data.val().foodID && item.foodID) {
+          const cart = {
+            foodID: item.foodID,
+            foodname: item.foodname,
+            foodprice: item.foodprice,
+            foodtype: item.foodtype,
+            day: curr_date + "-" + curr_month + "-" +  curr_year + ", " + curr_hourse + ":" + curr_minutes + ":" + curr_secounds,
+            status: 1,
+            placeID: 1,
+            amount: list.amount+1 ,
+            sum: list.sum + list.foodprice,
+          };
+          const update = {};
+          update['cart/' + this.table.name + '/' + item.foodID] = cart;
+          firebase.database().ref().update(update);
+          Swal.fire('สั่งอาหารสำเร็จแล้ว', 'กรุณาเช็ครายการของคุณ', 'success');
+        } else {
+          const cart = {
+            foodID: item.foodID,
+            foodname: item.foodname,
+            foodprice: item.foodprice,
+            foodtype: item.foodtype,
+            amount: 1,
+            day: curr_date + "-" + curr_month + "-" +  curr_year + ", " + curr_hourse + ":" + curr_minutes + ":" + curr_secounds,
+            status: 1,
+            sum: item.foodprice,
+            placeID: 1
+          };
+          const update = {};
+          update['cart/' + this.table.name + '/' + item.foodID] = cart;
+          firebase.database().ref().update(update);
+          Swal.fire('สั่งอาหารสำเร็จแล้ว', 'กรุณาเช็ครายการของคุณ', 'success');
+
+        }
+      }
     });
+  
   }
 }
 

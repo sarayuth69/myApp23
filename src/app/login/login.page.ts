@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 import 'sweetalert2/src/sweetalert2.scss';
 import { AlertController } from '@ionic/angular';
+import { AngularFireDatabase } from 'angularfire2/database';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -10,28 +11,49 @@ import { AlertController } from '@ionic/angular';
 })
 export class LoginPage implements OnInit {
 
-  constructor(public router: Router, public alertController: AlertController) { }
+  ID;
+  IDlength;
+  username;
+  password;
 
-  ngOnInit() {
+  constructor(public router: Router,
+  public alertController: AlertController,
+  public database: AngularFireDatabase,
+  ) { }
+
+  ngOnInit() {  
+
   }
-  click ( u: string, p: string) {
-    if (u === 'addmin' && p === 'addmin') {
-      this.router.navigate(['/menu' ]);
-    }
-    else if(u === 'cutomer' && p === 'cutomer') {
-      this.router.navigate(['/home' ]);
-    }
-    else if (u!='addmin' && p!='addmin'){
-      Swal.fire({
-        title: 'กรุณากรอกรหัสให้ถูกต้อง',
-        type: 'warning',
-  showCancelButton: true,
-  confirmButtonColor: '#3085d6',
-  cancelButtonColor: '#d33',
-  confirmButtonText: 'Yes'
+  register(){
+    this.router.navigate(['/register' ]);
 
-      })
-    }
   }
+  click (username,password){
+    
+    this.database.list('/user/').valueChanges().subscribe(data => {
+      this.ID = data;
+      this.IDlength = data.length + 1;
+      console.log(this.IDlength);
+        data.forEach(element => {
+          if ( username === 'addmin' && password === 'addmin') {
+            console.log("log1");
+            this.router.navigate(['/menu' ]);
+            
+          }else if( username === element.username && password === element.password) {
+          console.log(username);
+          console.log(password);
+          console.log("log2");
+          this.router.navigate(['/home', element ]);
 
+        }
+      });
+    });
+  }
 }
+
+
+
+    
+    
+      
+       

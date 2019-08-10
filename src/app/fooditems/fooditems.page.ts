@@ -6,6 +6,7 @@ import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 import 'sweetalert2/src/sweetalert2.scss';
 import { AlertController } from '@ionic/angular';
+import { timeout } from 'q';
 
 
 const newLocal = 'cartList/';
@@ -19,12 +20,14 @@ export class FooditemsPage implements OnInit {
   item: any;
   table: any;
   index = 0;
-  food: any;
   
+  
+  
+
   constructor(public router: Router,
-              private route: ActivatedRoute,
-              public database: AngularFireDatabase,
-              public alertController: AlertController) { }
+    private route: ActivatedRoute,
+    public database: AngularFireDatabase,
+    public alertController: AlertController) { }
 
   ngOnInit() {
     this.route.params.subscribe(
@@ -33,12 +36,20 @@ export class FooditemsPage implements OnInit {
         console.log(this.table);
       }
     );
-
     this.database.list(`/cart/${this.table.name}`).valueChanges().subscribe(data => {
       this.item = data;
       console.log(data);
     });
 
+    setTimeout(() => {
+      this.item.forEach((element, index) => {
+        this.sum += this.item[index].sum;
+        console.log(this.sum);
+      });
+    }, 1000);
+    
+   
+    
 
   }
   click(delet) {
@@ -57,30 +68,27 @@ export class FooditemsPage implements OnInit {
           'Your file has been deleted.',
           'success'
         )
+       
         firebase.database().ref(`cart/${this.table.name}/${delet.foodID}`).remove();
-        console.log(delet);
+        
       }
     })
-   
-
-
   }
+  
   total() {
-    this.item.forEach((element, index ) => {
-      this.sum += this.item[index].foodprice ;
-      console.log(this.sum);
-    });
-
+    // this.item.forEach((element, index) => {
+    //   this.sum += this.item[index].sum;
+    //   console.log(this.sum);
+    // });
     Swal.fire({
       title: 'พร้อมที่จะเช็คบินไหม??',
-      text: this.sum ,
+      text: this.sum,
       type: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      
       confirmButtonText: 'Yes, delete it!'
-     
+
     }).then((result) => {
       if (result.value) {
         Swal.fire(
@@ -88,11 +96,12 @@ export class FooditemsPage implements OnInit {
           'Your file has been deleted.',
           'success'
         )
-    firebase.database().ref(`cart/${this.table.name}`).remove();
-
+        firebase.database().ref(`cart/${this.table.name}`).remove();
+        this.sum=0;
       }
     })
-    this.sum = 0;
+    
+   
   }
 
 }
