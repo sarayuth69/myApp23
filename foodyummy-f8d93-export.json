@@ -1,0 +1,161 @@
+{
+  "cart" : {
+    "TABLE_1" : {
+      "1" : {
+        "amount" : 1,
+        "day" : "4-8-2019, 1:14:9",
+        "foodID" : 1,
+        "foodname" : "กะเพรารวมหมูหมึกกุ้ง+ไก่กรอบ",
+        "foodprice" : 40,
+        "foodtype" : "ผัด",
+        "placeID" : 1,
+        "status" : 1,
+        "sum" : 40
+      },
+      "3" : {
+        "amount" : 1,
+        "day" : "4-8-2019, 1:10:56",
+        "foodID" : 3,
+        "foodname" : "โกยซีหมี่หมูกรอบ",
+        "foodprice" : 50,
+        "foodtype" : "เส้น",
+        "placeID" : 1,
+        "status" : 1,
+        "sum" : 50
+      },
+      "7" : {
+        "amount" : 1,
+        "day" : "4-8-2019, 1:10:58",
+        "foodID" : 7,
+        "foodname" : "ข้าวราดแกงกะหรี่กุ้ง",
+        "foodprice" : 50,
+        "foodtype" : "แกง",
+        "placeID" : 1,
+        "status" : 1,
+        "sum" : 50
+      },
+      "10" : {
+        "amount" : 1,
+        "day" : "4-8-2019, 1:11:0",
+        "foodID" : 10,
+        "foodname" : "ราดหน้าหมูหมักหมี่กรอบ",
+        "foodprice" : 50,
+        "foodtype" : "ราดหน้า",
+        "placeID" : 1,
+        "status" : 1,
+        "sum" : 50
+      }
+    }
+  },
+  "tablemenu" : [ null, {
+    "foodID" : 1,
+    "foodimg" : "menu1.jpg",
+    "foodname" : "กะเพรารวมหมูหมึกกุ้ง+ไก่กรอบ",
+    "foodprice" : 40,
+    "foodtype" : "ผัด"
+  }, {
+    "foodID" : "2",
+    "foodimg" : "menu2.jpg",
+    "foodname" : "กะเพราหมูสับไข่ดาวอังคาร",
+    "foodprice" : "40",
+    "foodtype" : "ผัด"
+  }, {
+    "foodID" : 3,
+    "foodimg" : "menu3.jpg",
+    "foodname" : "โกยซีหมี่หมูกรอบ",
+    "foodprice" : 50,
+    "foodtype" : "เส้น"
+  }, {
+    "foodID" : 4,
+    "foodimg" : "menu4.jpg",
+    "foodname" : "ข้าวผัดขี้เมาไข่เจียวหมูกรอบ",
+    "foodprice" : 50,
+    "foodtype" : "ผัด"
+  }, {
+    "foodID" : 5,
+    "foodimg" : "menu5.jpg",
+    "foodname" : "ข้าวผัดฉ่าแกงป่า",
+    "foodprice" : 45,
+    "foodtype" : "ผัด"
+  }, {
+    "foodID" : 6,
+    "foodimg" : "menu6.jpg",
+    "foodname" : "ข้าวราดกุ้งคั่วพริกเกลือ",
+    "foodprice" : 50,
+    "foodtype" : "ผัด"
+  }, {
+    "foodID" : 7,
+    "foodimg" : "menu7.jpg",
+    "foodname" : "ข้าวราดแกงกะหรี่กุ้ง",
+    "foodprice" : 50,
+    "foodtype" : "แกง"
+  }, {
+    "foodID" : 8,
+    "foodimg" : "menu8.jpg",
+    "foodname" : "ต้มเลือดหมู",
+    "foodprice" : 50,
+    "foodtype" : "ต้ม"
+  }, {
+    "foodID" : 9,
+    "foodimg" : "menu9.jpg",
+    "foodname" : "ผัดซีอิ๊ว",
+    "foodprice" : 40,
+    "foodtype" : "ผัด"
+  }, {
+    "foodID" : 10,
+    "foodimg" : "menu10.jpg",
+    "foodname" : "ราดหน้าหมูหมักหมี่กรอบ",
+    "foodprice" : 50,
+    "foodtype" : "ราดหน้า"
+  }, {
+    "foodID" : 11,
+    "foodimg" : "menu11.jpg",
+    "foodname" : "หมี่แห้งซีอิ๊วลูกชิ้นเนื้อ",
+    "foodprice" : 45,
+    "foodtype" : "เส้น"
+  }, {
+    "foodID" : 12,
+    "foodimg" : "menu12.jpg",
+    "foodname" : "หมูทอดผัดผงกะหรี่",
+    "foodprice" : 50,
+    "foodtype" : "ทอด"
+  } ],
+  "typefood" : [ null, {
+    "foodtypename" : "ผัด",
+    "typefoodID" : 1
+  }, {
+    "foodtypename" : "ราดหน้า",
+    "typefoodID" : 2
+  }, {
+    "foodtypename" : "เส้น",
+    "typefoodID" : 3
+  }, {
+    "foodtypename" : "ทอด",
+    "typefoodID" : 4
+  }, {
+    "foodtypename" : "แกง",
+    "typefoodID" : 5
+  }, {
+    "foodtypename" : "ต้ม",
+    "typefoodID" : 6
+  } ],
+  "user" : [ null, {
+    "email" : "sarayuth69@gmail.comm",
+    "lastname" : "ไกรษร",
+    "name" : "ศรายุทธ",
+    "password" : "0872605597",
+    "phone" : "0872605597",
+    "userID" : 1,
+    "username" : "sarayuth",
+    "zip" : 30190
+  }, {
+    "email" : "ฟหกฟหก",
+    "lastname" : "ฟหกหฟก",
+    "name" : "ฟหก",
+    "password" : "123",
+    "phone" : "ฟหก",
+    "userID" : 2,
+    "username" : "arm",
+    "zip" : "ฟหกฟ"
+  } ]
+}

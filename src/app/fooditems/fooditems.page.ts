@@ -47,9 +47,6 @@ export class FooditemsPage implements OnInit {
         console.log(this.sum);
       });
     }, 1000);
-    
-   
-    
 
   }
   click(delet) {
