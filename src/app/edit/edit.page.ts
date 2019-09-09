@@ -57,4 +57,14 @@ edit(){
 
 }
   
+
+
+
+
+
+upload(files){
+  
+  // let files = this.fileField.getFiles();
+  console.log(files);
+}
 }
