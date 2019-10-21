@@ -5,6 +5,8 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { AlertController, ModalController } from '@ionic/angular';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 import 'sweetalert2/src/sweetalert2.scss';
+import { $ } from 'protractor';
+import { userInfo } from 'os';
 
 @Component({
   selector: 'app-edit',
@@ -17,6 +19,9 @@ export class EditPage implements OnInit {
   foodprice
   foodtype
   item: any;
+  exampleFormControlFile1: any;
+  selectedFile;
+  user;
 
   constructor(public router: Router,
     public database: AngularFireDatabase,
@@ -37,6 +42,7 @@ export class EditPage implements OnInit {
     );
   }
 edit(){
+ 
   firebase.database().ref('tablemenu/' + this.foodID).once('value').then(data => {
   const list = data.val();
     
@@ -45,8 +51,28 @@ edit(){
         foodname: this.foodname,
         foodprice: this.foodprice,
         foodtype: this.foodtype,
-      
+        
       };
+
+    
+      // var storageRef = firebase.storage().ref();
+      // var imagesRef = storageRef.child(assets/imags/logo.png);
+      // var fileName = this.exampleFormControlFile1;
+      // var spaceRef = imagesRef.child(fileName);
+      // var path = spaceRef.fullPath
+      // var name = spaceRef.name
+      // var imagesRef = spaceRef.parent;
+
+      // var storageRef = firebase.storage().ref();
+      // var mountainsRef = storageRef.child(this.exampleFormControlFile1);
+      // var mountainImagesRef = storageRef.child(this.exampleFormControlFile1);
+      // mountainsRef.name === mountainImagesRef.name            
+      // mountainsRef.fullPath === mountainImagesRef.fullPath 
+      // var file = this.exampleFormControlFile1
+
+      // firebase.storage().ref(file).child(this.exampleFormControlFile1) 
+      //   console.log('Uploaded a blob or file!');
+      
       console.log(cart);
       const update = {};
       update['tablemenu/' + this.foodID] = cart;
@@ -56,15 +82,7 @@ edit(){
   });
 
 }
-  
 
 
-
-
-
-upload(files){
-  
-  // let files = this.fileField.getFiles();
-  console.log(files);
-}
+ 
 }

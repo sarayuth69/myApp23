@@ -60,6 +60,7 @@ export class CutomermenuPage implements OnInit {
           status: 1,
           sum: item.foodprice,
           placeID: 1
+        
         };
         const update = {};
         update['cart/' + this.table.name + '/' + item.foodID] = cart;

@@ -33,7 +33,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text" id="addon-wrapping">ประเภท</span>
         </div>
-        <input type="text" class="form-control" placeholder="ประเภท" aria-label="ประเภท" [(ngModel)]="foodtype" aria-describedby="addon-wrapping">
+        <input type="text" class="form-control" id="imageCaption" placeholder="Write a Caption "  [(ngModel)]="foodtype" aria-describedby="addon-wrapping">
       </div>
     </div>
     
@@ -54,5 +54,5 @@
   </div>
 
 
-  <button type="button" class="btn btn-outline-success" (click) = "upload()">Success</button>
+  <button type="button" class="btn btn-outline-success" (click) = "edit()" >Success</button>
 </ion-content>

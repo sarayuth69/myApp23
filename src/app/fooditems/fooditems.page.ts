@@ -20,6 +20,8 @@ export class FooditemsPage implements OnInit {
   item: any;
   table: any;
   index = 0;
+  put  : boolean
+  de  : boolean
   
   
   
@@ -30,6 +32,9 @@ export class FooditemsPage implements OnInit {
     public alertController: AlertController) { }
 
   ngOnInit() {
+
+
+
     this.route.params.subscribe(
       (param: any) => {
         this.table = param;
@@ -94,11 +99,20 @@ export class FooditemsPage implements OnInit {
           'success'
         )
         firebase.database().ref(`cart/${this.table.name}`).remove();
-        this.sum=0;
+        
       }
+     
     })
-    
+    this.sum=0;
    
   }
+
+  onclick(){
+      this.de = true; 
+      
+      this.put = false; 
+      
+  }
+ 
 
 }

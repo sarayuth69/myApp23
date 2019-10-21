@@ -1,51 +1,16 @@
 {
   "cart" : {
-    "TABLE_1" : {
-      "1" : {
-        "amount" : 1,
-        "day" : "4-8-2019, 1:14:9",
-        "foodID" : 1,
-        "foodname" : "กะเพรารวมหมูหมึกกุ้ง+ไก่กรอบ",
-        "foodprice" : 40,
-        "foodtype" : "ผัด",
-        "placeID" : 1,
-        "status" : 1,
-        "sum" : 40
-      },
-      "3" : {
-        "amount" : 1,
-        "day" : "4-8-2019, 1:10:56",
-        "foodID" : 3,
-        "foodname" : "โกยซีหมี่หมูกรอบ",
-        "foodprice" : 50,
-        "foodtype" : "เส้น",
-        "placeID" : 1,
-        "status" : 1,
-        "sum" : 50
-      },
-      "7" : {
-        "amount" : 1,
-        "day" : "4-8-2019, 1:10:58",
-        "foodID" : 7,
-        "foodname" : "ข้าวราดแกงกะหรี่กุ้ง",
-        "foodprice" : 50,
-        "foodtype" : "แกง",
-        "placeID" : 1,
-        "status" : 1,
-        "sum" : 50
-      },
-      "10" : {
-        "amount" : 1,
-        "day" : "4-8-2019, 1:11:0",
-        "foodID" : 10,
-        "foodname" : "ราดหน้าหมูหมักหมี่กรอบ",
-        "foodprice" : 50,
-        "foodtype" : "ราดหน้า",
-        "placeID" : 1,
-        "status" : 1,
-        "sum" : 50
-      }
-    }
+    "TABLE_1" : [ null, {
+      "amount" : 1,
+      "day" : "16-9-2019, 17:59:30",
+      "foodID" : 1,
+      "foodname" : "กะเพรารวมหมูหมึกกุ้ง+ไก่กรอบ",
+      "foodprice" : 40,
+      "foodtype" : "ผัด",
+      "placeID" : 1,
+      "status" : 1,
+      "sum" : 40
+    } ]
   },
   "tablemenu" : [ null, {
     "foodID" : 1,
@@ -57,7 +22,7 @@
     "foodID" : "2",
     "foodimg" : "menu2.jpg",
     "foodname" : "กะเพราหมูสับไข่ดาวอังคาร",
-    "foodprice" : "40",
+    "foodprice" : 35,
     "foodtype" : "ผัด"
   }, {
     "foodID" : 3,
@@ -157,5 +122,14 @@
     "userID" : 2,
     "username" : "arm",
     "zip" : "ฟหกฟ"
+  }, {
+    "email" : "sarayuth@hmail.com",
+    "lastname" : "ไกรษร",
+    "name" : "ศรายุทธ",
+    "password" : "123456",
+    "phone" : "0872605597",
+    "userID" : 3,
+    "username" : "armgtr",
+    "zip" : "30190"
   } ]
 }
